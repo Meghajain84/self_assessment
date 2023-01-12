@@ -1,0 +1,45 @@
+Project Overview:
+-----------------
+Our project aims to answer the follwing questions using machine learning:
+1) Does income of a U.S. county correlate to number of EV’s in that area? 
+2) Does income play a role in access to charging stations in a particular area?
+We chose this topic as electric vehicles is future that is cost effective and better for climate. 
+
+We downloaded below datasets:
+State EV Registration Data : Per State EV Data 
+Provides downloadable EV Data by county/zip code on EV registration data and make/model. 
+Country Wide Fueling Data : Alternative Fueling Station Data 
+Created by U.S. Department of Transportation and contains country-wide filterable data on alternative fueling stations such as; location, public or private owned, contact information, etc. 
+Personal/Household Income by county : County Income 
+Provides income that people get from wages, proprietors' income, dividends, interest, rents, and government benefits. A person's income is counted in the county, metropolitan statistical area, or other area where they live, even if they work elsewhere.
+
+The final result of our analysis is that the income does play role in EV adoption. Definitely EVs population is linearly related to charging stations count.
+
+Self Assessment:
+----------------
+I used my acquired bootcamp knowledge of Python, Pandas, jupyter notebook, ETL, Postgres DB, AWS and tableau for my project. 
+I used jupyter notebook and pandas to clean the datasets to create dataframes to insert in Postgres DB hosted on AWS cloud:
+	-Data was read in Pandas dataframes, functions dtypes and value_counts() were used for initial exploration 
+	-Certain states data was merged from two CSV files into one dataframe for EV_registration DB table 
+	-Filtered rows based on certain values
+	-Unwanted columns were dropped 
+	-Rows with NaN were dropped 
+	-Column with state code was added 
+	-Dataframe columns names were renamed
+	-Datatype of string to datetime was done for certain columns
+	-Two columns were merged into a single column for certain datasets
+	-Library Psycopgy2 and sqlalchemy’s create_engine function was used to insert DF data into DB tables
+	-SQL queries were used to clean and manipulate data further in the DB tables such as removal of null or unknown values and so on
+	-County table data was loaded using PG admin’s load utility and then cleaned using SQL queries
+I set up the database and granted access to my teammates so that they can view and update database tables.
+I came up with majority of ML models from linear regression to multiple regression to K means and hierarchical to see the best model that help us analyzing.
+I used tableau to see the impact of income and EV counts on charging staions per county.
+My tutor Kourt Bailey was instrumental in giving me direction in the project that was lacking from instructional staff. I am very grateful for his guidance.
+I took help from TA to learn how to give access to users on DB hosted on AWS, and interactive tableau dashboard.
+
+Team Assessment:
+-----------------
+We were team of three people only. We had our communication channel open through text messages. We used to meet once a week other than regular class schedule to discuss and work on project via google meet.
+Every meeting, we exchanged updates and work on hurdles together. Tom was resourceful in finding US zips dataset and merging excels use in jupyter notebook. Brandon helped with initial tableau insights.
+We together looked at all ML results to come with final conclusion. 
+
